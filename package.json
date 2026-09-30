@@ -1,0 +1,54 @@
+{
+  "name": "loopnow-cpa-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint app components agent domain db lib tests e2e evaluation --no-error-on-unmatched-pattern",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx db/seed/index.ts",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:security": "vitest run tests/security",
+    "test:evaluation": "tsx evaluation/evaluator.ts",
+    "report:performance": "tsx evaluation/performance-report.ts",
+    "test:e2e": "playwright test",
+    "test": "npm run test:unit && npm run test:security"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "4.0.78",
+    "@tailwindcss/postcss": "4.1.9",
+    "ai": "7.0.118",
+    "decimal.js": "10.6.0",
+    "dotenv": "16.6.1",
+    "drizzle-orm": "0.45.3",
+    "lucide-react": "1.48.0",
+    "next": "16.3.6",
+    "pg": "8.16.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.10.1",
+    "@types/pg": "8.15.5",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "drizzle-kit": "0.31.4",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.3.6",
+    "tailwindcss": "4.1.9",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}

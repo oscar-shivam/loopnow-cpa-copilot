@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.next-build-verify/
+out/
+coverage/
+.vitest/
+playwright-report/
+test-results/
+.env
+.env.local
+.env.*.local
+!.env.example
+*.log
+*.tsbuildinfo
